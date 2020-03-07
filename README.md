@@ -24,4 +24,5 @@ Advanced Remote Access Trojan Tool.
   
 # Run
   ->python walterRat.py
+
 #DO NOT SCAN THE FILES TO VIRUSTOTAL OR ANY ONLINE VIRUS SCANNER
