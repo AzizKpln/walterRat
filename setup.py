@@ -1,14 +1,19 @@
 import subprocess
 import os
 import sys
+import time
+hostname=subprocess.check_output(["id"])
+hostname=hostname.split("(")
+hostname=str(hostname[1]).split(")")
 os.system("sudo apt-get update")
 os.system("sudo dpkg --add-architecture i386 && apt-get update")
 os.system("sudo apt-get install wine -y && apt-get install wine32 -y")
 os.system("sudo apt-get install figlet -y")
+os.system("sudo apt-get install python-pip -y")
 os.system("pip install opencv-python")
-hostname=subprocess.check_output("hostname",shell=True)
-hostname=hostname.split("\n")
+os.system("sudo apt-get install lxterminal")
 os.system("wine msiexec /i python/python-2.7.17.amd64.msi")
+os.system("wine /home/"+str(hostname[0])+"/.wine/drive_c/Python27/python.exe python/get-pip.py")
 pywin32_installer="wine /home/"+str(hostname[0])+"/.wine/drive_c/Python27/Scripts/pip.exe install pywin32"
 os.system(pywin32_installer)
 pyautogui_installer="wine /home/"+str(hostname[0])+"/.wine/drive_c/Python27/Scripts/pip.exe install pyautogui"

