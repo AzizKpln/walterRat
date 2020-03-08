@@ -18,6 +18,10 @@ Advanced Remote Access Trojan Tool.
   ->English:https://www.youtube.com/watch?v=Mphy1URUPGk
   
   ->Turkish:Soon
+  
+# Kali Version
+  ->Kali 2020+ Has To Be Used
+  
 # Installtion
   ->git clone https://github.com/AzizKpln/walterRat.git
   
