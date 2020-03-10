@@ -22,6 +22,10 @@ Advanced Remote Access Trojan Tool.
 # Kali Version
   ->Kali 2020+ Has To Be Used
   
+  ->This tool has to be used in normal account
+
+  ->This tool doesn't support root account yet. 
+  
 # Installtion
   ->git clone https://github.com/AzizKpln/walterRat.git
   
